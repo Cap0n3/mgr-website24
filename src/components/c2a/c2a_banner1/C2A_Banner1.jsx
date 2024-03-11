@@ -6,6 +6,8 @@ import Al_Detour from "../../../assets/img/Al1_Website24_detour.png";
 import styled from 'styled-components';
 import Banner1_grid from './Banner1_grid';
 import Slide from '@mui/material/Slide';
+import useAppear from '../../../hooks/useAppear';
+import layout from '../../../theme/layout';
 
 
 const Al_Image = styled('img')(
@@ -17,27 +19,22 @@ const Al_Image = styled('img')(
     ` 
 );
 
-const C2A_Banner1 = () => {
-    const [isVisible, setIsVisible] = useState(false);
+const C2A_Banner1 = ({ offset_trigger, transition_duration, transition_delay }) => {
+    // const [isVisible, setIsVisible] = useState(false);
     const leftCell_container  = useRef(null);
     const middleCell_container  = useRef(null);
     const rightCell_container  = useRef(null);
-
-    useEffect(() => {
-        setIsVisible(true);
-
-        return () => {
-            setIsVisible(false);
-        }
-    }
-    , []);
+    const containerRef = useRef(null);
+    const isVisible = useAppear(containerRef, offset_trigger)
 
     return (
-        <Box sx={{
-            flexGrow: 1,
-            pt: '2rem',
-            pl: '2rem',
-            pr: '2rem',
+        <Box 
+            ref={containerRef}
+            sx={{
+                flexGrow: 1,
+                pt: '2rem',
+                pl: '2rem',
+                pr: '2rem',
         }}>
             <Grid container spacing={2}>
                 <Grid 
@@ -52,7 +49,7 @@ const C2A_Banner1 = () => {
                     }}
                     ref={leftCell_container}
                 >
-                    <Slide direction="down" in={isVisible} container={leftCell_container.current} style={{ transitionDelay: isVisible ? '1000ms' : '0ms' }}>
+                    <Slide direction="down" in={isVisible} container={leftCell_container.current} style={{ transitionDuration: transition_duration, transitionDelay: transition_delay }}>
                         <Box>
                             <Typography component="h2" variant="h5" color="secondary" gutterBottom>
                                 Cours de guitare depuis 2010.
@@ -63,7 +60,7 @@ const C2A_Banner1 = () => {
                         </Box>
                     </Slide>
                 </Grid>
-                <Grid xs={6} md={4} ref={middleCell_container} sx={{ 
+                <Grid xs={12} md={4} ref={middleCell_container} sx={{ 
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'flex-end',
@@ -71,12 +68,12 @@ const C2A_Banner1 = () => {
                         overflow: 'hidden',
                     }}
                 >
-                    <Slide direction="left" in={isVisible} container={middleCell_container.current} style={{ transitionDelay: isVisible ? '1000ms' : '0ms' }}>
+                    <Slide direction="left" in={isVisible} container={middleCell_container.current} style={{ transitionDuration: transition_duration, transitionDelay: transition_delay }}>
                         <Al_Image src={Al_Detour} alt="Alex" />
                     </Slide>
                 </Grid>
                 <Grid 
-                    xs={6} 
+                    xs={12} 
                     md={4} 
                     ref={rightCell_container}
                     sx={{
@@ -88,7 +85,7 @@ const C2A_Banner1 = () => {
                         overflow: 'hidden',
                     }} 
                 >
-                    <Slide direction="down" in={isVisible} container={rightCell_container.current} style={{ transitionDelay: isVisible ? '1000ms' : '0ms' }}>
+                    <Slide direction="down" in={isVisible} container={rightCell_container.current} style={{ transitionDuration: transition_duration, transitionDelay: transition_delay }}>
                         <Box>
                             <Banner1_grid />
                         </Box>
