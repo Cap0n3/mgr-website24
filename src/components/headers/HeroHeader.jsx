@@ -26,9 +26,10 @@ const HeroHeader = () => {
             <Box
                 sx={{
                     display: 'flex',
-                    alignItems: 'center',
+                    alignItems: 'flex-end',
                     justifyContent: 'center',
                     height: `${windowSize.innerHeight - mgr_layout.navHeight}px`,
+                    pb: '40px',
                     minHeight: '500px',
                     backgroundColor: 'primary.dark',
                     backgroundSize: 'cover',
@@ -40,7 +41,7 @@ const HeroHeader = () => {
             >
                 <Slide direction="left" in={loaded} container={containerRef.current} style={{ transitionDelay: loaded ? '2000ms' : '0ms' }}>
                     <Container maxWidth="sm">
-                        <Typography
+                        {/* <Typography
                             component="h1"
                             variant="h2"
                             align="center"
@@ -57,7 +58,7 @@ const HeroHeader = () => {
                         >
                             Something short and leading about the collection below—its contents,
                             the creator, etc. Make it short and sweet, but not too short.
-                        </Typography>
+                        </Typography> */}
                         <Box
                             sx={{
                                 mt: 4,
@@ -66,8 +67,8 @@ const HeroHeader = () => {
                                 alignItems: 'center',
                             }}
                         >
-                            <Button component={Link} to="/method" color="secondary" variant="outlined" size="large" sx={{ mt: 2 }}>
-                                Secondary action
+                            <Button component={Link} to="/method" color="secondary" variant="contained" size="large" sx={{ mt: 2 }}>
+                                Cours de guitare
                             </Button>
                         </Box>
                     </Container>

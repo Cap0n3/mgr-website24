@@ -48,7 +48,7 @@ const Banner1_grid = () => {
                         Expérience
                     </Typography>
                     <Typography variant="body2" color="secondary" fontWeight="fontWeightLight" align="center">
-                        Expérience de la scène, du studio et de l'enseignement. MAO (Musique Assistée par Ordinateur) et enregistrement.
+                        Expérience de la scène, du studio et de l'enseignement. MAO (Musique Assistée par Ordinateur).
                     </Typography>
                 </Grid>
                 <Grid xs={12} md={6} sx={{ 
@@ -66,10 +66,10 @@ const Banner1_grid = () => {
                         }} 
                     />
                     <Typography component="h3" variant="h6" color="secondary" align="center">
-                        Support pédagogique
+                        Pédagogie
                     </Typography>
                     <Typography variant="body2" color="secondary" fontWeight="fontWeightLight" align="center">
-                        Support pédagogique de qualité pour un apprentissage rapide et efficace.
+                        Enseignement de qualité pour un apprentissage rapide et efficace.
                     </Typography>
                 </Grid>
                 <Grid xs={12} md={6} sx={{ 
@@ -90,7 +90,7 @@ const Banner1_grid = () => {
                         Cloud
                     </Typography>
                     <Typography variant="body2" color="secondary" fontWeight="fontWeightLight" align="center">
-                        Cours et support pédagogique disponibles sur le cloud à tout moment.
+                        Cours et supports pédagogiques disponibles sur le cloud à tout moment.
                     </Typography>
                 </Grid>
             </Grid>
